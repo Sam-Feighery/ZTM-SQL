@@ -1,0 +1,43 @@
+/*
+Question 1-
+* DB: Store
+* Table: Customers
+* Question: 
+* Select people either under 30 or over 50 with an income above 50000
+* Include people that are 50
+* that are from either Japan or Australia
+
+*/
+Answer 1-
+My first attempt gave me 3437 and this was not the result that was expected when looking at the solution
+I then placed the age and country queries in brackets to order the query better and ended on a result of
+868
+
+Select customerid, firstname, income from customers
+WHERE income > 50000 and age < 30 OR age >= 50
+AND country = 'Japan' or country = 'Australia'
+ORDER by firstname
+
+Select customerid, firstname, income from customers
+WHERE income > 50000 and (age < 30 OR age >= 50)
+AND (country = 'Japan' or country = 'Australia')
+ORDER by firstname
+*/
+
+
+/*
+* DB: Store
+* Table: Orders
+* Question: 
+* What was our total sales in June of 2004 for orders over 100 dollars?
+*/
+
+/*
+I got the following result using the between filter for the date stated above, it differs from the answer but after
+checking the solution it gives the same result of 205226.06
+
+My SQL query
+SELECT sum(totalamount) from orders
+WHERE orderdate between '2004-06-01' and '2004-06-30'
+AND totalamount > 100
+*/
