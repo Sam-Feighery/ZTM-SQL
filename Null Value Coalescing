@@ -4,8 +4,8 @@
 * Assuming a students minimum age for the class is 15, what is the average age of a student?
 
 --Answer
-SELECT sum(coalesce(age, 15)) from "Student";
-Result = 152
+SELECT avg(coalesce(age, 15)) from "Student";
+Result = 30.4000000000000000
 
 */
 
