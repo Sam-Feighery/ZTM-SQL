@@ -1,0 +1,23 @@
+/*
+* DB: Store
+* Table: orders
+* Question: How many orders were made by customer 7888, 1082, 12808, 9623
+*/
+
+select count(orderid) from orders
+Where customerid in (7888, 1082, 12808, 9623)
+
+Result = 6
+
+
+/*
+* DB: World
+* Table: city
+* Question: How many cities are in the district of Zuid-Holland, Noord-Brabant and Utrecht?
+*/
+
+SELECT count(*) from city
+WHERE district in ('Zuid-Holland', 'Noord-Brabant', 'Utrecht')
+
+Result = 12 
+Had to place the strings for the districts in '' for the query to work properly, "" did not work
