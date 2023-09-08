@@ -29,8 +29,6 @@ Where first_name like 'A%r'
 select count(customerid) from customers
 Where zip::text like '%2%'
 
-
-
 /*
 * DB: Store
 * Table: customers
@@ -38,6 +36,8 @@ Where zip::text like '%2%'
 * Expected output: 109 
 */
 
+select count(customerid) from customers
+Where zip::text like '2_1%'
 
 /*
 * DB: Store
@@ -46,3 +46,6 @@ Where zip::text like '%2%'
 * Replace null values with "No State"                                                  
 * Expected output: https://imgur.com/AVe6G4c
 */
+
+select coalesce(state, 'No State') from customers
+where phone like '302%'
